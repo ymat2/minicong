@@ -1,0 +1,4 @@
+/data/*
+/test/*
+!/test/get_one_isoform.py
+!/test/get_sequence.sh
