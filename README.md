@@ -1,5 +1,5 @@
 # MiniConG
-<u>Mini</u>mal hands-on for <u>Con</u>parative <u>G</u>enomics
+<u>Mini</u>mal hands-on for <u>Com</u>parative <u>G</u>enomics
 
 
 ## Requirements
