@@ -1,9 +1,13 @@
 #! /bin/sh
 
-for seq in GCF_001442555.1 GCF_003254395.2; do
-  curl --globoff -OJX GET "https://api.ncbi.nlm.nih.gov/datasets/v1/genome/accession/"$seq"/download?exclude_sequence=True&include_annotation_type=PROT_FASTA&filename="$seq".zip" -H "Accept: application/zip"
-  unzip $seq.zip -d test/$seq
-  rm -r $seq.zip
+[ !-d data ] && mkdir data
 
-  python3 test/get_one_isoform.py -i $seq -o data
-done
+#wget https://ftp.ensembl.org/pub/release-109/fasta/canis_lupus_familiaris/pep/Canis_lupus_familiaris.ROS_Cfam_1.0.pep.all.fa.gz
+#gunzip -d Canis_lupus_familiaris.ROS_Cfam_1.0.pep.all.fa.gz
+#mv Canis_lupus_familiaris.ROS_Cfam_1.0.pep.all.fa test/
+#
+#wget https://ftp.ensembl.org/pub/release-109/fasta/canis_lupus_dingo/pep/Canis_lupus_dingo.ASM325472v1.pep.all.fa.gz
+#gunzip -d Canis_lupus_dingo.ASM325472v1.pep.all.fa.gz
+#mv Canis_lupus_dingo.ASM325472v1.pep.all.fa test/
+
+python3 test/get_longest_isoform.py -i test -o data
