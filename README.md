@@ -4,6 +4,7 @@
 
 ## Requirements
 - Unix-like environment
+	- `git`, `wget`
 - Python3 (>= 3.9.0)
 - homebrew
 	- blast
