@@ -10,7 +10,7 @@ def main():
   parser.add_argument("-o", "--outdir")
   args = parser.parse_args()
 
-  fasta = glob.glob(args.indir+"/*.fa")
+  fasta = glob.glob(args.indir+"/*.all.fa")
   for f in fasta:
     file_name = f.split("/")[-1].replace(".all.fa", ".longest.fa")
     f = get_longest_seq(f)
